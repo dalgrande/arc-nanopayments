@@ -69,7 +69,6 @@ if (!funderKey) {
 
 const ARC_TESTNET_USDC = "0x3600000000000000000000000000000000000000" as const;
 const ARC_TESTNET_RPC = "https://rpc.testnet.arc.network";
-const ARC_TESTNET_EXPLORER_TX_BASE = "https://testnet.arcscan.io/tx/";
 
 const BASE_URL = process.env.BASE_URL ?? "http://localhost:3000";
 const DEPOSIT_AMOUNT = process.env.DEPOSIT_AMOUNT ?? "1";
@@ -87,6 +86,7 @@ const endpoints = [
   { url: `${BASE_URL}/api/premium/agent-task`, method: "GET" as const },
 ];
 
+const ARC_TESTNET_EXPLORER_TX_BASE = "https://testnet.arcscan.app/tx/";
 const txUrl = (hash: string) => `${ARC_TESTNET_EXPLORER_TX_BASE}${hash}`;
 
 function logGatewayBalances(label: string, balances: Awaited<ReturnType<GatewayClient["getBalances"]>>) {
